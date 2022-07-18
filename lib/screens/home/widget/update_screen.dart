@@ -51,7 +51,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
               ElevatedButton(
                   onPressed: () async {
                     try {
-                      bool asset = await ApiService().updateAsset(
+                 bool asset = await ApiService().updateAsset(
                           assetNameController.text,
                           assetTypeController.text,
                           assetValueController.text,
