@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                                                       context, 'home');
                                                 } else {
                                                   throw Exception(
-                                                      'Failedto delete asset');
+                                                      'Failed to delete asset');
                                                 }
                                               },
                                               icon: const Icon(Icons.delete)),
