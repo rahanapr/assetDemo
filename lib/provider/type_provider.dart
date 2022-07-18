@@ -7,11 +7,11 @@ class TypeProvider extends ChangeNotifier {
  List<TypeModel?> type=[];
  bool loading = false;
  
-  
-
-  getTypeData() async {
+  getTypData() async {
+    loading = true;
     type = await fetchTypeData();
     //await fetchData();
+    loading = false;
 
     notifyListeners();
   }
