@@ -12,15 +12,14 @@ BoxDecoration backgroundGradient() {
   return BoxDecoration(
       gradient: LinearGradient(
     colors: [
-     
       hexStringToColor("edf2f4"),
       hexStringToColor("caf0f8"),
       hexStringToColor("8ecae6"),
-
     ],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   ));
 }
-final Color themeColor =hexStringToColor("084c61");
-final Color backgroundColor =hexStringToColor("eae2b7");
+
+final Color themeColor = hexStringToColor("084c61");
+final Color backgroundColor = hexStringToColor("eae2b7");

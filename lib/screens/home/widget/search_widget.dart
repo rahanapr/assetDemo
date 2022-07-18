@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 
-class SearchWidget extends SearchDelegate{
+class SearchWidget extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
-    return [IconButton(onPressed: (){
-      query="";
-    }, icon:const Icon(Icons.close)
-    )];
+    return [
+      IconButton(
+          onPressed: () {
+            query = "";
+          },
+          icon: const Icon(Icons.close))
+    ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
-   return IconButton(onPressed: (){
-    Navigator.pop(context);
-   }, icon:const Icon(Icons.arrow_back));
+    return IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(Icons.arrow_back));
   }
 
   @override
@@ -29,5 +34,4 @@ class SearchWidget extends SearchDelegate{
       child: Text('Search Assets'),
     );
   }
-
 }

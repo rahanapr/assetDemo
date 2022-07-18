@@ -18,5 +18,4 @@ class Validator {
     }
     return null;
   }
-
 }

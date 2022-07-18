@@ -1,4 +1,3 @@
-
 import 'package:asset_project_demo/core/constants.dart';
 import 'package:asset_project_demo/screens/register/widget/image_widget.dart';
 import 'package:asset_project_demo/screens/register/widget/registertion_widget.dart';

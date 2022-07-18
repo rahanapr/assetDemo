@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 class DropDownWidget extends StatefulWidget {
   const DropDownWidget({Key? key}) : super(key: key);
 
@@ -15,8 +14,6 @@ class DropDownWidget extends StatefulWidget {
 }
 
 class _DropDownWidgetState extends State<DropDownWidget> {
-
-
   List typeData = [];
 
   String? typeId;
@@ -37,10 +34,10 @@ class _DropDownWidgetState extends State<DropDownWidget> {
 
   Future<String> getTypeData() async {
     var res = await http.get(Uri.parse(url));
-    var resBody = json.decode(res.body) ;
-    
+    var resBody = json.decode(res.body);
+
     setState(() {
-      typeData = resBody ;
+      typeData = resBody;
     });
 
     print(resBody);
@@ -73,5 +70,3 @@ class _DropDownWidgetState extends State<DropDownWidget> {
         });
   }
 }
-
- 

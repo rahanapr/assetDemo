@@ -18,16 +18,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return
-     MultiProvider(
+    return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-        create: (BuildContext context)=>AssetProvider()),
-         ChangeNotifierProvider(
-        create: (BuildContext context)=>TypeProvider()),
+            create: (BuildContext context) => AssetProvider()),
+        ChangeNotifierProvider(
+            create: (BuildContext context) => TypeProvider()),
       ],
-      child: 
-      MaterialApp(
+      child: MaterialApp(
         builder: (context, widget) => ResponsiveWrapper.builder(
             ClampingScrollWrapper.builder(context, widget!),
             breakpoints: [
@@ -43,13 +41,13 @@ class MyApp extends StatelessWidget {
               style: ElevatedButton.styleFrom(primary: themeColor)),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-       home: const HomeScreen(),
-       routes: {
-        'home':(context)=>const HomeScreen(),
-         'register':(context)=>const RegisterScreen(),
-        'update':(context)=>const UpdateScreen(),
-       },
-     ),
+        home: const HomeScreen(),
+        routes: {
+          'home': (context) => const HomeScreen(),
+          'register': (context) => const RegisterScreen(),
+          'update': (context) => const UpdateScreen(),
+        },
+      ),
     );
   }
 }

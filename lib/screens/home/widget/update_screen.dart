@@ -18,14 +18,11 @@ class _UpdateScreenState extends State<UpdateScreen> {
   final departmentController = TextEditingController();
   final purchaseDateController = TextEditingController();
 
-
   @override
   void initState() {
     super.initState();
-   ApiService().getAllAssets();
+    ApiService().getAllAssets();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,24 +50,22 @@ class _UpdateScreenState extends State<UpdateScreen> {
               kHeight20,
               ElevatedButton(
                   onPressed: () async {
-                    try{
-                       bool asset= await  ApiService().updateAsset(
-                        assetNameController.text,
-                        assetTypeController.text,
-                        assetValueController.text,
-                        assetExpiryController.text,
-                        purchaseDateController.text,
-                        departmentController.text);
+                    try {
+                      bool asset = await ApiService().updateAsset(
+                          assetNameController.text,
+                          assetTypeController.text,
+                          assetValueController.text,
+                          assetExpiryController.text,
+                          purchaseDateController.text,
+                          departmentController.text);
                       if (asset) {
                         Navigator.popAndPushNamed(context, 'home');
                       } else {
-                          throw Exception('Failedto create asset');
+                        throw Exception('Failedto create asset');
                       }
-                   
-                    }catch(e){
+                    } catch (e) {
                       e.toString();
                     }
-              
                   },
                   child: const Text(
                     'Save',

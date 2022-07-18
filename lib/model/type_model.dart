@@ -9,17 +9,17 @@ TypeModel typeModelFromJson(String str) => TypeModel.fromJson(json.decode(str));
 String typeModelToJson(TypeModel data) => json.encode(data.toJson());
 
 class TypeModel {
-    TypeModel({
-        required this.assetType,
-    });
+  TypeModel({
+    required this.assetType,
+  });
 
-    List<String> assetType;
+  List<String> assetType;
 
-    factory TypeModel.fromJson(Map<String, dynamic> json) => TypeModel(
+  factory TypeModel.fromJson(Map<String, dynamic> json) => TypeModel(
         assetType: List<String>.from(json["assetType"].map((x) => x)),
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "assetType": List<dynamic>.from(assetType.map((x) => x)),
-    };
+      };
 }
