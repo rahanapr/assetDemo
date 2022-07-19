@@ -41,11 +41,11 @@ class MyApp extends StatelessWidget {
               style: ElevatedButton.styleFrom(primary: themeColor)),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: const HomeScreen(),
+        home:  HomeScreen(),
         routes: {
-          'home': (context) => const HomeScreen(),
-          'register': (context) => const RegisterScreen(),
-          'update': (context) => const UpdateScreen(),
+          'home': (context) =>  HomeScreen(),
+          'register': (context) => RegisterScreen(),
+          'update': (context) => UpdateScreen(),
         },
       ),
     );

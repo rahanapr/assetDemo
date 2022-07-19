@@ -7,8 +7,20 @@ import 'package:asset_project_demo/services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  _ScreenAssetsViewState createState() => _ScreenAssetsViewState();
+}
+
+class _ScreenAssetsViewState extends State<HomeScreen> {
+  @override
+  void initState() {
+    // print("${sharedp.getString("email")}");
+    super.initState();
+    context.read<AssetProvider>().getAllAssets();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,16 +101,17 @@ class HomeScreen extends StatelessWidget {
                                           kWidth10,
                                           IconButton(
                                               onPressed: () async {
-                                                final asset = await ApiService()
-                                                    .delete(value
-                                                        .assetList[index].id);
-                                                if (asset != null) {
-                                                  Navigator.popAndPushNamed(
-                                                      context, 'home');
-                                                } else {
-                                                  throw Exception(
-                                                      'Failed to delete asset');
-                                                }
+                                                // final asset = await ApiService()
+                                                //     .delete(value
+                                                //         .assetList[index]
+                                                //         .id as String);
+                                                // if (asset != null) {
+                                                //   Navigator.popAndPushNamed(
+                                                //       context, 'home');
+                                                // } else {
+                                                //   throw Exception(
+                                                //       'Failedto delete asset');
+                                                // }
                                               },
                                               icon: const Icon(Icons.delete)),
                                         ],

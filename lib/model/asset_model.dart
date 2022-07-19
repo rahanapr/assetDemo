@@ -12,80 +12,78 @@ String assetModelToJson(List<AssetModel> data) =>
 
 class AssetModel {
   AssetModel({
-    required this.id,
-    required this.assetId,
-    required this.assetName,
-    required this.assetType,
-    required this.assetValue,
-    required this.assetExpiry,
-    required this.department,
-    required this.assetGeoLocation,
-    required this.assetBarcode,
-    required this.assetStatus,
-    required this.createdBy,
-    required this.assetMaintainenceHistory,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.v,
-    required this.purchaseDate,
+     this.id,
+     this.assetId,
+     this.assetName,
+     this.assetType,
+     this.assetValue,
+     this.assetExpiry,
+     this.department,
+     this.assetGeoLocation,
+     this.assetBarcode,
+     this.assetStatus,
+     this.createdBy,
+    //required this.assetMaintainenceHistory,
+     this.createdAt,
+     this.updatedAt,
+     this.v,
+     this.purchaseDate,
   });
 
-  String id;
-  String assetId;
-  String assetName;
-  String assetType;
-  int assetValue;
-  DateTime assetExpiry;
-  String department;
-  String assetGeoLocation;
-  String assetBarcode;
-  String assetStatus;
-  String createdBy;
-  List<AssetMaintainenceHistory> assetMaintainenceHistory;
-  DateTime createdAt;
-  DateTime updatedAt;
-  int v;
-  DateTime? purchaseDate;
+  final String? id;
+  final String? assetId;
+  final String? assetName;
+  final String? assetType;
+  final int? assetValue;
+  final DateTime? assetExpiry;
+  final String? department;
+  final String? assetGeoLocation;
+  final String? assetBarcode;
+  final String? assetStatus;
+  final String? createdBy;
+  //List<AssetMaintainenceHistory> assetMaintainenceHistory;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+  final int? v;
+  final DateTime? purchaseDate;
 
-  factory AssetModel.fromJson(Map<String, dynamic> json) => AssetModel(
+  factory AssetModel.fromJson(Map<String, dynamic> json) { return AssetModel(
         id: json["_id"],
         assetId: json["assetID"],
         assetName: json["assetName"],
         assetType: json["assetType"],
         assetValue: json["assetValue"],
-        assetExpiry: DateTime.parse(json["assetExpiry"]),
+        //assetExpiry: DateTime.parse(json["assetExpiry"]),
         department: json["department"],
         assetGeoLocation: json["assetGeoLocation"],
         assetBarcode: json["assetBarcode"],
         assetStatus: json["assetStatus"],
         createdBy: json["createdBy"],
-        assetMaintainenceHistory: List<AssetMaintainenceHistory>.from(
-            json["assetMaintainenceHistory"]
-                .map((x) => AssetMaintainenceHistory.fromJson(x))),
-        createdAt: DateTime.parse(json["createdAt"]),
-        updatedAt: DateTime.parse(json["updatedAt"]),
+        //assetMaintainenceHistory: List<AssetMaintainenceHistory>.from(
+           // json["assetMaintainenceHistory"]
+               // .map((x) => AssetMaintainenceHistory.fromJson(x))),
+        //createdAt: DateTime.parse(json["createdAt"]),
+        //updatedAt: DateTime.parse(json["updatedAt"]),
         v: json["__v"],
-        purchaseDate: json["purchaseDate"] == null
-            ? null
-            : DateTime.parse(json["purchaseDate"]),
+        //purchaseDate: json["purchaseDate"] == null
+           // ? null
+           // : DateTime.parse(json["purchaseDate"]),
       );
-
+  }
   Map<String, dynamic> toJson() => {
         "_id": id,
         "assetID": assetId,
         "assetName": assetName,
         "assetType": assetType,
         "assetValue": assetValue,
-        "assetExpiry": assetExpiry.toIso8601String(),
+        "assetExpiry": assetExpiry,
         "department": department,
         "assetGeoLocation": assetGeoLocation,
         "assetBarcode": assetBarcode,
         "assetStatus": assetStatus,
         "createdBy": createdBy,
-        "assetMaintainenceHistory":
-            List<dynamic>.from(assetMaintainenceHistory.map((x) => x.toJson())),
-        "createdAt": createdAt.toIso8601String(),
-        "updatedAt": updatedAt.toIso8601String(),
+        //"assetMaintainenceHistory":
+        //    List<dynamic>.from(assetMaintainenceHistory.map((x) => x.toJson())),
         "__v": v,
         "purchaseDate":
             purchaseDate == null ? null : purchaseDate!.toIso8601String(),
